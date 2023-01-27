@@ -10,7 +10,10 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
 
-import com.tech.crud.Student;
+import com.relationship.onetoone.Course;
+import com.relationship.onetoone.Student;
+
+
 
 public class HibernateUtil 
 {
@@ -24,7 +27,7 @@ public class HibernateUtil
     	
     	  setting.put(Environment.DRIVER,"com.mysql.jdbc.Driver");
     	  
-    	  setting.put(Environment.URL,"jdbc:mysql://localhost:3306/hbjavabase05");
+    	  setting.put(Environment.URL,"jdbc:mysql://localhost:3306/hbrp05");
     	  
     	  setting.put(Environment.USER,"root");
     	  
@@ -42,7 +45,8 @@ public class HibernateUtil
     	  
     	 registory=new StandardServiceRegistryBuilder().
     			       applySettings(setting).build();
-    	 MetadataSources msd=new MetadataSources(registory).addAnnotatedClass(Student.class);
+    	 MetadataSources msd=new MetadataSources(registory).
+    			 addAnnotatedClass(Student.class).addAnnotatedClass(Course.class);
     	 Metadata md=msd.getMetadataBuilder().build();
     	 
          sf=md.getSessionFactoryBuilder().build();
