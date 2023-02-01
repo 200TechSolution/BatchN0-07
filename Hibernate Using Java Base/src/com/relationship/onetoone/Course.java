@@ -2,6 +2,8 @@ package com.relationship.onetoone;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Course {
@@ -11,6 +13,17 @@ public class Course {
 	
 	private String cname;
 	
+	@OneToOne(mappedBy="cource")
+	@JoinColumn(name ="sid")
+	private Student student;
+	
+	
+	public Student getStudent() {
+		return student;
+	}
+	public void setStudent(Student student) {
+		this.student = student;
+	}
 	public String getCid() {
 		return cid;
 	}

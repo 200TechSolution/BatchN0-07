@@ -2,6 +2,7 @@ package com.relationship.onetoone;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -15,6 +16,7 @@ public class Student {
 	private String mono;
 	
 	@OneToOne
+	@JoinColumn(name ="cid")
 	private Course cource;
 	
 	
