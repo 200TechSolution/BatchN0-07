@@ -10,6 +10,8 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
 
+import com.relationship.maytomany.EMployees;
+import com.relationship.maytomany.Project;
 import com.relationship.onetomany.Student;
 import com.relationship.onetomany.Teacher;
 
@@ -48,7 +50,7 @@ public class HibernateUtil
     	 registory=new StandardServiceRegistryBuilder().
     			       applySettings(setting).build();
     	 MetadataSources msd=new MetadataSources(registory).
-    			 addAnnotatedClass(Student.class).addAnnotatedClass(Teacher.class);
+    			 addAnnotatedClass(EMployees.class).addAnnotatedClass(Project.class);
     	 Metadata md=msd.getMetadataBuilder().build();
     	 
          sf=md.getSessionFactoryBuilder().build();
