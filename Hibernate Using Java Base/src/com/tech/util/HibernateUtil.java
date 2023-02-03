@@ -14,6 +14,7 @@ import com.relationship.maytomany.EMployees;
 import com.relationship.maytomany.Project;
 import com.relationship.onetomany.Student;
 import com.relationship.onetomany.Teacher;
+import com.tech.cache.Employee;
 
 
 
@@ -31,7 +32,7 @@ public class HibernateUtil
     	
     	  setting.put(Environment.DRIVER,"com.mysql.jdbc.Driver");
     	  
-    	  setting.put(Environment.URL,"jdbc:mysql://localhost:3306/onetomany05");
+    	  setting.put(Environment.URL,"jdbc:mysql://localhost:3306/catche");
     	  
     	  setting.put(Environment.USER,"root");
     	  
@@ -39,7 +40,7 @@ public class HibernateUtil
     	  
     	  setting.put(Environment.HBM2DDL_AUTO,"update");
     	  
-    	  //setting.put(Environment.FORMAT_SQL,"true");
+    	  setting.put(Environment.FORMAT_SQL,"true");
     	  
     	  setting.put(Environment.SHOW_SQL,"true");
     	  
@@ -49,8 +50,8 @@ public class HibernateUtil
     	  
     	 registory=new StandardServiceRegistryBuilder().
     			       applySettings(setting).build();
-    	 MetadataSources msd=new MetadataSources(registory).
-    			 addAnnotatedClass(EMployees.class).addAnnotatedClass(Project.class);
+    	 MetadataSources msd=new MetadataSources(registory).addAnnotatedClass(Employee.class);
+    			 //addAnnotatedClass(Student.class).addAnnotatedClass(Teacher.class);
     	 Metadata md=msd.getMetadataBuilder().build();
     	 
          sf=md.getSessionFactoryBuilder().build();

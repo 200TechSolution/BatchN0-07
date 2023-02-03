@@ -53,23 +53,31 @@ public class Main {
 //		  
 //		  session.close();
 //		  
-//		         
-		     //Featch Data
-		
-	     Teacher t= session.get(Teacher.class,"T_101");
-	     System.out.println(t.getTid());
-	     System.out.println(t.getTname());
-	  //  System.out.println(t.getStudents());
-	      
-	      
-	      
-	      for(Student stu:t.getStudents())
-	      {
-	    	 
-	    	 System.out.println(stu.getSid());
-	    	 System.out.println(stu.getSname());
-	      }
+////		         
+//		     //Featch Data
+//		
+//	     Teacher t= session.get(Teacher.class,"T_101");
+//	     System.out.println(t.getTid());
+//	     System.out.println(t.getTname());
+//	  //  System.out.println(t.getStudents());
+//	      
+//	      
+//	      
+//	      for(Student stu:t.getStudents())
+//	      {
+//	    	 
+//	    	 System.out.println(stu.getSid());
+//	    	 System.out.println(stu.getSname());
+//	      }
 		        
+		//Featch Type
+		
+	   Teacher t=session.get(Teacher.class,"T_101");
+	   System.out.println(t.getTid());
+	   System.out.println(t.getTname());
+	   
+	   //Lazy
+	   //System.out.println(t.getStudents().size());
 		        
 		
 	}

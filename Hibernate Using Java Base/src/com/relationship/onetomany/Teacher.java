@@ -3,6 +3,7 @@ package com.relationship.onetomany;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -13,7 +14,7 @@ public class Teacher
    private String tid;
    private String tname;
    
-   @OneToMany(mappedBy="teacher")
+   @OneToMany(mappedBy="teacher",fetch = FetchType.EAGER)
    private List<Student> students;
 
 public String getTid() {
