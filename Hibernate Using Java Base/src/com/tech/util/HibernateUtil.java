@@ -38,9 +38,13 @@ public class HibernateUtil
     	  
     	  setting.put(Environment.PASS,"root");
     	  
-    	  setting.put(Environment.HBM2DDL_AUTO,"update");
+    	  setting.put(Environment.HBM2DDL_AUTO,"create");
     	  
     	  setting.put(Environment.FORMAT_SQL,"true");
+    	  
+    	  setting.put(Environment.USE_SECOND_LEVEL_CACHE,true);
+    	  
+    	  setting.put(Environment.CACHE_REGION_FACTORY,"org.hibernate.cache.ehcache.EhCacheRegionFactory");
     	  
     	  setting.put(Environment.SHOW_SQL,"true");
     	  
