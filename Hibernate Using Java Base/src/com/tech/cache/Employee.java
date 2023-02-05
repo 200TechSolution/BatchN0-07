@@ -27,7 +27,10 @@ public class Employee
 	
   private String Ename;
   
-  @Transient
+  
+
+
+@Transient
   private int x;
   
   

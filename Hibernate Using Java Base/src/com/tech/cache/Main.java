@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
 
+
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -51,20 +53,22 @@ public class Main {
     
 	
 	//for more Annotations like save Image etc
-    Employee e=new Employee();
-    e.setEid(101);
-    e.setEname("Amol A.");
-    e.setDate(new Date());
-    e.setX(123654);
+	
+	    Employee e=new Employee();
+	    e.setEid(101);
+	    e.setEname("Amol A.");
+	    e.setDate(new Date());
+	    e.setX(123654);
+   
     
-FileInputStream file=new FileInputStream("src/img.png") ;   
-byte[] data=new byte[file.available()];
-file.read(data);
-e.setImage(data);
-
-session.save(e);
-session.beginTransaction().commit();
-session.close();
+		FileInputStream file=new FileInputStream("src/img.png") ;   
+		byte[] data=new byte[file.available()];
+		file.read(data);
+		e.setImage(data);
+		
+		session.save(e);
+		session.beginTransaction().commit();
+		session.close();
     
 	}        
 }

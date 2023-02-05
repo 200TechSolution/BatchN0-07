@@ -10,11 +10,11 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Environment;
 
+import com.hql.querys.Student;
 import com.relationship.maytomany.EMployees;
 import com.relationship.maytomany.Project;
-import com.relationship.onetomany.Student;
+
 import com.relationship.onetomany.Teacher;
-import com.tech.cache.Employee;
 
 
 
@@ -32,13 +32,13 @@ public class HibernateUtil
     	
     	  setting.put(Environment.DRIVER,"com.mysql.jdbc.Driver");
     	  
-    	  setting.put(Environment.URL,"jdbc:mysql://localhost:3306/catche");
+    	  setting.put(Environment.URL,"jdbc:mysql://localhost:3306/hqlQuery");
     	  
     	  setting.put(Environment.USER,"root");
     	  
     	  setting.put(Environment.PASS,"root");
     	  
-    	  setting.put(Environment.HBM2DDL_AUTO,"create");
+    	  setting.put(Environment.HBM2DDL_AUTO,"update");
     	  
     	  setting.put(Environment.FORMAT_SQL,"true");
     	  
@@ -54,7 +54,7 @@ public class HibernateUtil
     	  
     	 registory=new StandardServiceRegistryBuilder().
     			       applySettings(setting).build();
-    	 MetadataSources msd=new MetadataSources(registory).addAnnotatedClass(Employee.class);
+    	 MetadataSources msd=new MetadataSources(registory).addAnnotatedClass(Student.class);
     			 //addAnnotatedClass(Student.class).addAnnotatedClass(Teacher.class);
     	 Metadata md=msd.getMetadataBuilder().build();
     	 
