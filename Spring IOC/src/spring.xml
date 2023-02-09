@@ -5,7 +5,9 @@ xmlns="http://www.springframework.org/schema/beans"
      xsi:schemaLocation="http://www.springframework.org/schema/beans
      https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-  <bean  id="w"  class="com.tec.ioc.Welcome"></bean>
+ <bean  id="w"  class="com.tec.ioc.Welcome" scope="singleton"></bean>
+  
+   
   
  
 

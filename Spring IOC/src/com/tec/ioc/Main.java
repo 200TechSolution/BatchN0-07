@@ -11,15 +11,19 @@ public class Main {
 	
 	public static void main(String[] args)
 	{
-	//	Resource rs=new ClassPathResource("spring.xml");
-		
-		//BeanFactory b=new XmlBeanFactory(rs);
+	
 		ApplicationContext ap=new ClassPathXmlApplicationContext("spring.xml");
 		
 		
 		  Welcome wel=(Welcome)ap.getBean("w");
+		  System.out.println("First call"+wel);
+		  
+		  Welcome wel1=(Welcome)ap.getBean("w");
+		  System.out.println("Second call"+wel1);
 		   
-		  wel.display();
+		 
+		
+		
 		
 	}
 
