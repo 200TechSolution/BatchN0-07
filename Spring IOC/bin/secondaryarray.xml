@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans
+     https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <bean id="m1" class="com.setter.secondaryarray.Mono" >
+      <property name="mobno" value="95956906054"></property>
+   </bean>
+   
+   <bean id="m2" class="com.setter.secondaryarray.Mono">
+     <property name="mobno" value="7020356894"></property>
+   </bean>
+   
+   <bean id="sa" class="com.setter.secondaryarray.Student">
+         <property name="sid" value="10007"></property>
+         <property name="sname" value="Harshad"></property>
+         <property name="mono">
+           <list>
+             <ref bean="m1"/>
+             <ref bean="m2"/>
+           </list>
+         </property>
+   </bean>
+
+
+
+
+</beans>

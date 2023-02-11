@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans
+     https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="a" class="com.setter.secondary.Address">
+    <property name="areaname"  value="SambjiColonoy"></property>
+    <property name="city" value="Vaijapur"></property>
+    <property name="pincode" value="423701"></property>
+  </bean>
+
+
+	 <bean id="ss" class="com.setter.secondary.Student">
+	        <property name="sid" value="101"></property>
+	        <property name="sname" value="Amol Aghav"></property>
+	        <property name="Addrs" ref="a"></property> 
+	 </bean>
+	   
+  
+ 
+
+</beans>

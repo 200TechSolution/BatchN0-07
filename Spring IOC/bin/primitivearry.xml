@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans
+     https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+      <bean id="spa" class="com.setter.primitivearray.Student">
+         <property name="sid" value="101"></property>
+         <property name="sname" value="Vishal Dhandre"></property>
+         <property name="mono">
+          <list>
+	         <value>9595690654</value>
+	         <value>9823654791</value>
+	         <value>9486923154</value>
+          </list>
+         </property>
+      </bean>
+     
+     
+     
+     
+   </beans>
