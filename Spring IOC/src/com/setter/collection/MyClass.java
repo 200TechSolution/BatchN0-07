@@ -6,6 +6,9 @@ import java.util.Set;
 
 public class MyClass {
 	
+	
+	
+	
 	private List myList;
 	private Set mySet;
 	private Map myMap;

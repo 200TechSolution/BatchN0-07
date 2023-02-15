@@ -6,6 +6,7 @@ xmlns="http://www.springframework.org/schema/beans"
      https://www.springframework.org/schema/beans/spring-beans.xsd">
     
     <bean id="sc" class="com.setter.collection.MyClass">
+    
 	    <property name="myList">
 	      <list>
 		      <value>JAVA</value>

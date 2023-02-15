@@ -15,6 +15,7 @@ public class Main {
 		  
 		  
 		  System.out.println(mc.getMyList());
+		  
 		  System.out.println( mc.getMySet());
 		  System.out.println(mc.getMyMap());
 		 
