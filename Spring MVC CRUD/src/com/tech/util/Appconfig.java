@@ -28,7 +28,7 @@ public class Appconfig {
 		{
 			DriverManagerDataSource d=new DriverManagerDataSource();
 			d.setDriverClassName("com.mysql.jdbc.Driver");
-			d.setUrl("jdbc:mysql://localhost:3306/mitcogvs");
+			d.setUrl("jdbc:mysql://localhost:3306/springcrud05");
 			d.setUsername("root");
 			d.setPassword("root");
 			return d;

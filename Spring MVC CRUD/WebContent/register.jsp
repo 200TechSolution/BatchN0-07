@@ -7,7 +7,7 @@
 <title>Student Register Page</title>
 </head>
 <body>
-<form action="">
+<form action="reg">
 <pre>
 Stuent Name:     <input type="text"name="sname">
 
