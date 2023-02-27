@@ -10,4 +10,8 @@ public interface DaoI {
 	public String saveData(Student stu);
 	
 	public List<Student> getStudent(String userName,String Password);
+	
+	public List<Student>getAllStudents();
+	
+	public String deleteStudent(String id);
 }

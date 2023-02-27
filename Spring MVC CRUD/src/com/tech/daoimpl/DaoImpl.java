@@ -38,8 +38,7 @@ public class DaoImpl implements DaoI {
 		Session session = sf.openSession();
 		Transaction tx = session.beginTransaction();
 
-		Query q = session.createQuery(
-				"from Student where userName=:user and password=:pass");
+		Query q = session.createQuery("from Student where userName=:user and password=:pass");
 		q.setParameter("user", userName);
 		q.setParameter("pass", Password);
 		List studentList = q.getResultList();
@@ -47,6 +46,27 @@ public class DaoImpl implements DaoI {
 		session.close();
 
 		return studentList;
+	}
+
+	@Override
+	public List<Student> getAllStudents() {
+
+		Session session = sf.openSession();
+		Transaction tx = session.beginTransaction();
+		Query q = session.createQuery("from Student");
+		List slist = q.getResultList();
+		return slist;
+	}
+
+	@Override
+	public String deleteStudent(String id) {
+		Session session = sf.openSession();
+		Student stu = session.get(Student.class, id);
+		session.delete(stu);
+		Transaction tx = session.beginTransaction();
+		tx.commit();
+
+		return null;
 	}
 
 }

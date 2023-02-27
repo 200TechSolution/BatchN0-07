@@ -45,15 +45,9 @@ public class HomeController {
 			Student s,Model m){
 		if(us.equals("admin")&& pw.equals("tech"))
 		{
-			System.out.println("Hello Spring");
-			List<Student>stu= si.getStudent(us, pw);
+			System.out.println("hello Admin");
+			List<Student>stu= si.getAllStudents();
 			m.addAttribute("data",stu);
-			
-			for(Student s1:stu)
-			{
-				System.out.println(s1.getSid());
-				System.out.println(s1.getSname());
-			}
 			
 			return "success";
 			
@@ -61,16 +55,45 @@ public class HomeController {
 		
 		else if(us.equals(us) && pw.equals(pw))
 		{
+			if(us!="admin"&& pw!="tech")
+			{
+				return "error";
+			}
+			else
+			{
+			System.out.println("for single STudent");
 			List<Student>stu= si.getStudent(us, pw);
 			m.addAttribute("data",stu);
 			return "success";
+			}
 			
 		}
-			
+		
+		
 		return "index";
+			
+		
 		
 	}
 	
+	@RequestMapping("/delete")
+	public String deleteStudent(@RequestParam("rd")String id,Model m)
+	{
+		System.out.println(id);
+		si.deleteStudent(id);
+		
+       List<Student>stu=si.getAllStudents();
+       m.addAttribute("data",stu);
+		return "success";
+	}
+	
+	@RequestMapping("/update")
+	public String updateStudent()
+	{
+		System.out.println("hello Update Student");
+		return null;
+		
+	}
 	
 
 }

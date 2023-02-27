@@ -29,4 +29,16 @@ public class MyServiceImpl implements MyServiceI {
 		return daoi.getStudent(userName, Password);
 	}
 
+	@Override
+	public List<Student> getAllStudents() {
+		
+		return daoi.getAllStudents();
+	}
+
+	@Override
+	public String deleteStudent(String id) {
+		
+		return daoi.deleteStudent(id);
+	}
+
 }
