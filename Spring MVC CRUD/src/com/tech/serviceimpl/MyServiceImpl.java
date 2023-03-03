@@ -9,7 +9,6 @@ import com.tech.daoi.DaoI;
 import com.tech.model.Student;
 import com.tech.serviceI.MyServiceI;
 
-
 @Service
 public class MyServiceImpl implements MyServiceI {
 
@@ -39,6 +38,12 @@ public class MyServiceImpl implements MyServiceI {
 	public String deleteStudent(String id) {
 		
 		return daoi.deleteStudent(id);
+	}
+
+	@Override
+	public Student editData(String id) {
+		
+		return daoi.editData(id);
 	}
 
 }

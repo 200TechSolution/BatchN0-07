@@ -87,10 +87,19 @@ public class HomeController {
 		return "success";
 	}
 	
-	@RequestMapping("/update")
-	public String updateStudent()
+	@RequestMapping("/edit")
+	public String editStudent(@RequestParam("rd")String id,Model m)
 	{
 		System.out.println("hello Update Student");
+		Student stu=si.editData(id);
+		m.addAttribute("data",stu);
+		
+		return "update";
+		
+	}
+	
+	public String updateStudent()
+	{
 		return null;
 		
 	}

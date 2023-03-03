@@ -14,6 +14,8 @@ public interface MyServiceI {
 	
 	public String deleteStudent(String id);
 	
+	public Student   editData(String id);
+	
 	
 	
 }

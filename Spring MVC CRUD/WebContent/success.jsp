@@ -13,7 +13,7 @@ function deletedata() {
 
 function updatedata() {
 	alert("Do you want to update data?")
-	document.myform.action="update";
+	document.myform.action="edit";
 	document.myform.submit();
 	
 }

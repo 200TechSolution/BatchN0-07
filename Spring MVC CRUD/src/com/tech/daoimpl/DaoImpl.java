@@ -24,7 +24,7 @@ public class DaoImpl implements DaoI {
 
 		Session session = sf.openSession();
 		Transaction tx = session.beginTransaction();
-		String s = (String) session.save(stu);
+		session.saveOrUpdate(stu);
 		tx.commit();
 
 		session.close();
@@ -66,7 +66,17 @@ public class DaoImpl implements DaoI {
 		Transaction tx = session.beginTransaction();
 		tx.commit();
 
-		return null;
+		return "Student Id:"+stu.getSid() +"Deleted Successfully";
+	}
+
+	@Override
+	public Student editData(String id) {
+		Session session=sf.openSession();
+		
+		 Student stu=session.get(Student.class,id);
+		 session.update(stu);
+		 session.beginTransaction().commit();
+		return stu;
 	}
 
 }

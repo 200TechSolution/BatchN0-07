@@ -14,4 +14,6 @@ public interface DaoI {
 	public List<Student>getAllStudents();
 	
 	public String deleteStudent(String id);
+	
+	public Student   editData(String id);
 }
